@@ -1,14 +1,14 @@
 import { Pool } from "pg"
 
 const pool = new Pool({
-  host: process.env.DB_HOST,
-  port: Number(process.env.DB_PORT),
-  password: process.env.DB_PASSWORD,
-  user: process.env.DB_USERNAME,
-  idleTimeoutMillis: Number(process.env.DB_POOL_IDLE_TIMEOUT),
-  database: process.env.DB_DATABASE,
-  max: Number(process.env.DB_POOL_MAX),
-  connectionTimeoutMillis: Number(process.env.DB_POOL_CONNECTION_TIMEOUT),
+  host: process.env.POSTGRES_HOST,
+  port: Number(process.env.POSTGRES_PORT),
+  password: process.env.POSTGRES_PASSWORD,
+  user: process.env.POSTGRES_USER,
+  idleTimeoutMillis: Number(process.env.POSTGRES_POOL_IDLE_TIMEOUT),
+  database: process.env.POSTGRES_DB,
+  max: Number(process.env.POSTGRES_POOL_MAX),
+  connectionTimeoutMillis: Number(process.env.POSTGRES_POOL_CONNECTION_TIMEOUT),
 })
 
 pool.on("error", (err: Error, _client: any) => {
